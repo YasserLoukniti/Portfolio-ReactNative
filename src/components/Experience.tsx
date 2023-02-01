@@ -1,19 +1,18 @@
 import { StyleSheet, View, Text, ImageBackground, InteractionManager } from 'react-native';
 import { COLORS } from '../../template/template';
-import profileImg from '../../assets/profile.jpg';
 import { experienceType } from '../data/experiences';
 
 interface IExperience {
     experience:experienceType
 }
 const  Experience: React.FC<IExperience> = ({experience}) => {
-    const {company ,city  ,date,description,image= profileImg} = experience;
+    const {company ,city  ,date,description,image} = experience;
     console.log(company);
-    
+
     return (
         <View style={styles.container}>
             <View style={styles.logoView}>
-                <ImageBackground source={image} resizeMode="cover" style={{
+                <ImageBackground source={require("../../assets/profile.jpg")} resizeMode="cover" style={{
                     flex: 1,
                     justifyContent: 'center'
                 }}>
